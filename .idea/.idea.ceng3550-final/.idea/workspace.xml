@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b35a6d6e-334b-4968-b8db-372f49a5c313" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/DoorClose.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DoorClose.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/DoorOpen.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DoorOpen.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Firing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Firing.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animator/DoorController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/DoorController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animator/GunController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/GunController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animator/PlayerController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/PlayerController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masks/Firing.mask" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masks/Firing.mask" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masks/Hurt.mask" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masks/Hurt.mask" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masks/Jump.mask" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masks/Jump.mask" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBloodCloud.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBloodCloud.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBloodSplash.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBloodSplash.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBrickBits.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBrickBits.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBrickChunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBrickChunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBrickSpray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtBrickSpray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtConcreteBits.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtConcreteBits.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtConcreteChunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtConcreteChunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtConcreteSpray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtConcreteSpray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtDirtCloud.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtDirtCloud.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtDirtSpray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtDirtSpray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtDustCloud.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtDustCloud.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtGlassBits.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtGlassBits.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtGlassShard.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtGlassShard.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtGlassSpray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtGlassSpray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtMetalSpark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtMetalSpark.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtMetalSparkBunch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtMetalSparkBunch.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtMetalSpray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtMetalSpray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterCloud.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterCloud.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterRing.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterRing.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterSplash.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterSplash.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterSpray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWaterSpray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWoodBits.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWoodBits.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWoodChunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWoodChunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWoodSpray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/Materials/mtWoodSpray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactBrick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactBrick.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactConcrete.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactConcrete.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactDirt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactDirt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactFlesh.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactFlesh.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactGlass.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactGlass.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactMetal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactMetal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactWater.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactWater.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactWood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BulletImpacts/impactWood.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Airtube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Airtube.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/AsphaltDamaged.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/AsphaltDamaged.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/AsphaltDamaged_tiling_fixed_warehouse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/AsphaltDamaged_tiling_fixed_warehouse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/AsphaltDamaged_tiling_fixed_warehouse_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/AsphaltDamaged_tiling_fixed_warehouse_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/BrickLargeBlack tiling_fixed_warehouse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/BrickLargeBlack tiling_fixed_warehouse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/BrickLargeBlack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/BrickLargeBlack.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/BrickLargeBrown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/BrickLargeBrown.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/ColorWood.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/ColorWood.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/CombinedBoxes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/CombinedBoxes.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/DoorsFrame.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/DoorsFrame.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/FireHydrant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/FireHydrant.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/HighRiseResidential_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/HighRiseResidential_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/HighRiseResidential_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/HighRiseResidential_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/HighRiseResidential_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/HighRiseResidential_3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalBulkheads.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalBulkheads.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalPlatesRusted.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalPlatesRusted.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalPlatesZinc.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalPlatesZinc.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalRivets.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/MetalRivets.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/OuteriorFloors.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/OuteriorFloors.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Pamatas.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Pamatas.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/PlywoodOld.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/PlywoodOld.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Roads.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Roads.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/RoofConcrete.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/RoofConcrete.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Stripes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/Stripes.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/WarningLine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/WarningLine.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/WaterCanal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/WaterCanal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/WoodPlanksBeamed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enviroment/Materials/WoodPlanksBeamed.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Gun/Materials/Ak47 Body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Gun/Materials/Ak47 Body.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Gun/Materials/Ak47 Magazine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Gun/Materials/Ak47 Magazine.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Gun/Materials/FlareParticleMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Gun/Materials/FlareParticleMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Gun/Materials/GreyMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Gun/Materials/GreyMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Body_Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Body_Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Bottom_Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Bottom_Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Eyewear_Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Eyewear_Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Hair_Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Hair_Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Hat_Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Hat_Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Shoes_Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Shoes_Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Top_Diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Policeman/Materials/Policeman_Top_Diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Robot_X/Materials/Beta_Body_MAT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Robot_X/Materials/Beta_Body_MAT.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Robot_X/Materials/Beta_Joints_MAT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Robot_X/Materials/Beta_Joints_MAT.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Robot_Y/Materials/Alpha_Body_MAT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Robot_Y/Materials/Alpha_Body_MAT.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Robot_Y/Materials/Alpha_Joints_MAT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Robot_Y/Materials/Alpha_Joints_MAT.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayFabEditorExtensions/Editor/Resources/PlayFabUnitySdk.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enviroment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enviroment.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/GunParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/GunParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/PolicemanController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/PolicemanController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/RobotXController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/RobotXController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/RobotYController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/RobotYController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactBrick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactBrick.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactConcrete.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactConcrete.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactDirt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactDirt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactFlesh.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactFlesh.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactGlass.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactGlass.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactMetal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactMetal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactWater.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactWater.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactWood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/impactWood.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Login.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Login.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PostProcessVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PostProcessVolumeProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tA5A2wdqxJbxgfhH3spPIosUaF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
