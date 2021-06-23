@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 758b3537ad19efa4bb95c9bab3235eb1
+  - enabled: 1
+    path: Assets/Scenes/TokenRegistration.unity
+    guid: 0c894b315a919574185b3cb982386b2a
   m_configObjects: {}

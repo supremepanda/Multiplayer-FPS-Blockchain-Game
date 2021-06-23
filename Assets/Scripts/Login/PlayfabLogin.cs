@@ -64,7 +64,12 @@ namespace Login
 
         private void OnLoginRequestSuccess(LoginResult result)
         {
-            Debug.Log("Login succesfull");
+            Debug.Log("Login successfully");
+            if (PlayfabUser.Instance.PlayfabId == null)
+            {
+                PlayfabUser.Instance.PlayfabId = result.PlayFabId;
+            }
+            
             LoginSuccess();
         }
 
@@ -79,7 +84,7 @@ namespace Login
 
         private void LoginSuccess()
         {
-            SceneManager.LoadScene("Start");
+            SceneManager.LoadScene("TokenRegistration");
         }
 
         #endregion
@@ -111,7 +116,49 @@ namespace Login
         }
 
         #endregion
+
+        #region Data Request
+
+        //public void GetUserData()
+        //{
+        //    PlayFabClientAPI.GetUserData(new GetUserDataRequest(
+        //    {
+        //        PlayFabId = 
+        //    })
+        //    
+        //}
+
+        private void OnRequestDataSuccess(GetUserDataResult result)
+        {
+            Debug.Log(result);
+        }
+
+        private void OnRequestDataFailure(PlayFabError error)
+        {
+            Debug.Log(error);
+        }
+
+        #endregion
+
+        #region GetAccountInfo
+
+        private void GetAccountInfo()
+        {
+            GetAccountInfoRequest req = new GetAccountInfoRequest();
+            PlayFabClientAPI.GetAccountInfo(req, OnGetAccountInfoSuccess, OnGetAccountInfoFailure);
+        }
+
+        private void OnGetAccountInfoSuccess(GetAccountInfoResult result)
+        {   
+            PlayfabUser.Instance.PlayfabId = result.AccountInfo.PlayFabId;
+        }
+
+        private void OnGetAccountInfoFailure(PlayFabError error)
+        {
+            Debug.Log($"Error: {error}");
+        }
     
+        #endregion
         private void Start()
         {   
             loginUsernameField.text = GetSavedUsername();
