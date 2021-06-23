@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3699,13 +3699,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758017c00fae10d4d9b8725b0c8eacc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loginUsernameField: {fileID: 0}
-  loginPasswordField: {fileID: 0}
-  registerUsernameField: {fileID: 0}
-  registerEmailField: {fileID: 0}
-  registerPasswordField: {fileID: 0}
-  loginPanel: {fileID: 0}
-  registerPanel: {fileID: 0}
+  loginUsernameField: {fileID: 1076381380}
+  loginPasswordField: {fileID: 1697547313}
+  registerUsernameField: {fileID: 189384626}
+  registerEmailField: {fileID: 1989777165}
+  registerPasswordField: {fileID: 278278059}
+  loginPanel: {fileID: 629318559}
+  registerPanel: {fileID: 1281774329}
 --- !u!1 &1788466748
 GameObject:
   m_ObjectHideFlags: 0
