@@ -150,21 +150,24 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
                 //Handle AccountInfo
                 Debug.Log(result.AccountInfo.PlayFabId);
                 winnerPID = result.AccountInfo.PlayFabId;
-                GetUserData(winnerPID);
+                GetUserData(winnerPID, adress =>
+                {
+                    eth.PrivateKey = _playfabUser.Instance.PrivateKey;
+                    eth.AddressTo = adress;
+                    eth.Url = "https://ropsten.infura.io/v3/64941807daee4f26864ec8e8d1a12620";
+                    eth.Amount = 0.1m;
 
-                eth.PrivateKey = _playfabUser.Instance.PrivateKey;
-                eth.AddressTo = winnerAdrs;
-                eth.Url = "https://ropsten.infura.io/v3/64941807daee4f26864ec8e8d1a12620";
-                eth.Amount = 0.1m;
+                    Debug.Log(" Killer = " +  winnerName + "\n" +
+                              "Dead = " + _playfabUser.Instance.PrivateKey.ToString() + "\n" +
+                              " eth.PrivateKey = " +  eth.PrivateKey.ToString() + "\n" +
+                              "eth.AddressTo = " + eth.AddressTo.ToString() + "\n" +
+                              "eth.Url = " +  eth.Url + "\n" +
+                              "eth.Amount" + eth.Amount + "\n" +
+                              "eth.GasPriceGwei = " + eth.GasPriceGwei + "\n" );
+                    eth.TransferRequest();
+                });
 
-                Debug.Log(" Killer = " +  winnerName + "\n" +
-                          "Dead = " + _playfabUser.Instance.PrivateKey.ToString() + "\n" +
-                          " eth.PrivateKey = " +  eth.PrivateKey.ToString() + "\n" +
-                          "eth.AddressTo = " + eth.AddressTo.ToString() + "\n" +
-                          "eth.Url = " +  eth.Url + "\n" +
-                          "eth.Amount" + eth.Amount + "\n" +
-                          "eth.GasPriceGwei = " + eth.GasPriceGwei + "\n" );
-                eth.TransferRequest();
+                
             },
             error => { Debug.LogError(error.GenerateErrorReport()); });
         
@@ -200,15 +203,20 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
             currentHealth = (int)stream.ReceiveNext();
         }
     }
-    void GetUserData(string winnerPID) {
+    void GetUserData(string winnerPID, System.Action<string> callback) {
         PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
             PlayFabId = winnerPID,
             Keys = null
         }, result => {
             Debug.Log("Got user data:");
             if (result.Data == null || !result.Data.ContainsKey("address") || !result.Data.ContainsKey("privateKey")) Debug.Log("No address");
-            else //Debug.Log("address: "+result.Data["address"].Value);
-            winnerAdrs = result.Data["address"].Value;
+            else
+            {
+                winnerAdrs = result.Data["address"].Value;
+                callback(winnerAdrs);
+                Debug.Log($"Winner adress:{winnerAdrs}");
+            }
+            
         }, (error) => {
             Debug.Log("Got error retrieving user data:");
             Debug.Log(error.GenerateErrorReport());
