@@ -11,6 +11,8 @@ namespace Login
         private const int LoginPanel = 0;
         private const int RegisterPanel = 1;
 
+        private PlayfabUser _playfabUser;
+
         [SerializeField] private TMP_InputField loginUsernameField, loginPasswordField,
             registerUsernameField, registerEmailField, registerPasswordField;
 
@@ -50,7 +52,7 @@ namespace Login
         {
             return PlayerPrefs.GetString("USERNAME");
         }
-    
+
         public void Login(string username, string password)
         {
             var req = new LoginWithPlayFabRequest
@@ -65,11 +67,11 @@ namespace Login
         private void OnLoginRequestSuccess(LoginResult result)
         {
             Debug.Log("Login successfully");
-            if (PlayfabUser.Instance.PlayfabId == null)
+            if (_playfabUser.Instance.PlayfabId == null)
             {
-                PlayfabUser.Instance.PlayfabId = result.PlayFabId;
+                _playfabUser.Instance.PlayfabId = result.PlayFabId;
             }
-            
+
             LoginSuccess();
         }
 
@@ -123,9 +125,9 @@ namespace Login
         //{
         //    PlayFabClientAPI.GetUserData(new GetUserDataRequest(
         //    {
-        //        PlayFabId = 
+        //        PlayFabId =
         //    })
-        //    
+        //
         //}
 
         private void OnRequestDataSuccess(GetUserDataResult result)
@@ -149,18 +151,19 @@ namespace Login
         }
 
         private void OnGetAccountInfoSuccess(GetAccountInfoResult result)
-        {   
-            PlayfabUser.Instance.PlayfabId = result.AccountInfo.PlayFabId;
+        {
+            _playfabUser.Instance.PlayfabId = result.AccountInfo.PlayFabId;
         }
 
         private void OnGetAccountInfoFailure(PlayFabError error)
         {
             Debug.Log($"Error: {error}");
         }
-    
+
         #endregion
         private void Start()
-        {   
+        {
+            _playfabUser = FindObjectOfType<PlayfabUser>();
             loginUsernameField.text = GetSavedUsername();
         }
     }

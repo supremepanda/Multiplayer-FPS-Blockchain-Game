@@ -2331,6 +2331,10 @@ namespace PlayFab
         }
 
 
+        public static void GetUserData(GetUserDataRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

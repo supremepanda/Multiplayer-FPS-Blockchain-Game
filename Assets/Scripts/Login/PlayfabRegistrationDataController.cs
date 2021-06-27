@@ -10,6 +10,8 @@ public class PlayfabRegistrationDataController : MonoBehaviour
 {
     [SerializeField] private GameObject tokenRegistrationPanel;
 
+    private PlayfabUser _playfabUser;
+
     private string _address;
     private string _privateKey;
 
@@ -22,12 +24,12 @@ public class PlayfabRegistrationDataController : MonoBehaviour
     {
         _privateKey = value;
     }
-    
+
     private void GetUserData()
     {
         PlayFabClientAPI.GetUserData(new GetUserDataRequest
         {
-            PlayFabId = PlayfabUser.Instance.PlayfabId,
+            PlayFabId = _playfabUser.Instance.PlayfabId,
             Keys = null
         }, result => {
             Debug.Log("Got user data:");
@@ -39,9 +41,11 @@ public class PlayfabRegistrationDataController : MonoBehaviour
             else
             {
                 Debug.Log(result.Data);
+                _playfabUser.Instance.Address = result.Data["address"].Value;
+                _playfabUser.Instance.PrivateKey = result.Data["privateKey"].Value;
                 LoadGame();
             }
-            
+
         }, (error) => {
             Debug.Log("Got error retrieving user data:");
             Debug.Log(error.GenerateErrorReport());
@@ -55,13 +59,13 @@ public class PlayfabRegistrationDataController : MonoBehaviour
             Debug.Log("Invalid address");
             return;
         }
-        
+
         if (_privateKey.Length != 64)
         {
             Debug.Log("Invalid private key");
             return;
         }
-        
+
         PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest()
             {
                 Data = new Dictionary<string, string> {
@@ -71,8 +75,8 @@ public class PlayfabRegistrationDataController : MonoBehaviour
             },
             result =>
             {
-                PlayfabUser.Instance.Adress = _address;
-                PlayfabUser.Instance.PrivateKey = _privateKey;
+                _playfabUser.Instance.Address = _address;
+                _playfabUser.Instance.PrivateKey = _privateKey;
                 LoadGame();
             },
             error => {
@@ -90,9 +94,10 @@ public class PlayfabRegistrationDataController : MonoBehaviour
     {
         SceneManager.LoadScene("Start");
     }
-    
+
     private void Start()
     {
+        _playfabUser = FindObjectOfType<PlayfabUser>();
         GetUserData();
     }
 }

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayfabUser : MonoBehaviour
 {
-    private static PlayfabUser instance = null;
-    public static PlayfabUser Instance
+    private PlayfabUser instance = null;
+    public PlayfabUser Instance
     {
         get
         {
@@ -22,15 +22,17 @@ public class PlayfabUser : MonoBehaviour
     }
 
     public string PlayfabId { get; set; }
-    public string Adress { get; set; }
+    public string Address { get; set; }
     public string PrivateKey { get; set; }
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
-            Destroy(this);
-            DontDestroyOnLoad(this);
+            Destroy(this.gameObject);
         }
+
+        instance = this;
+        DontDestroyOnLoad( this.gameObject );
     }
 }

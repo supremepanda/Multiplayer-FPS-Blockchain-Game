@@ -13,6 +13,7 @@ TagManager:
   - Concrete
   - Brick
   - Water
+  - ETH
   layers:
   - Default
   - TransparentFX

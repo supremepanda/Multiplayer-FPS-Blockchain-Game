@@ -3,17 +3,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using System.Collections;
-
+using Nethereum.RPC.Eth;
+using PlayFab;
+using PlayFab.ClientModels;
 [RequireComponent(typeof(FirstPersonController))]
 [RequireComponent(typeof(Rigidbody))]
-
 public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
-
     public delegate void Respawn(float time);
     public delegate void AddMessage(string Message);
     public event Respawn RespawnEvent;
     public event AddMessage AddMessageEvent;
-
+    public EtherTransferCoroutinesUnityWebRequest eth;
     [SerializeField]
     private int startingHealth = 100;
     [SerializeField]
@@ -36,7 +36,6 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
     private NameTag nameTag;
     [SerializeField]
     private Animator animator;
-
     private FirstPersonController fpController;
     private IKControl ikControl;
     private Slider healthSlider;
@@ -45,12 +44,28 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
     private bool isDead;
     private bool isSinking;
     private bool damaged;
-
+    private string winnerPID;
+    private string winnerAdrs;
+    private string winnerName;
+    private PlayfabUser _playfabUser;
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start() {
+    void Start()
+    {
+        winnerPID = "";
+        winnerAdrs = "";
+        winnerName = "";
+
+
+        _playfabUser = FindObjectOfType<PlayfabUser>();
+
+
+        Debug.Log(_playfabUser.Instance.Address + "\n" + _playfabUser.Instance.PrivateKey);
+
+        EtherTransferCoroutinesUnityWebRequest eth = GameObject.FindGameObjectWithTag("ETH")
+            .GetComponent<EtherTransferCoroutinesUnityWebRequest>();
         fpController = GetComponent<FirstPersonController>();
         ikControl = GetComponentInChildren<IKControl>();
         damageImage = GameObject.FindGameObjectWithTag("Screen").transform.Find("DamageImage").GetComponent<Image>();
@@ -64,7 +79,6 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
         isDead = false;
         isSinking = false;
     }
-
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
@@ -79,7 +93,6 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
             transform.Translate(Vector3.down * sinkSpeed * Time.deltaTime);
         }
     }
-
     /// <summary>
     /// RPC function to let the player take damage.
     /// </summary>
@@ -100,13 +113,13 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
         playerAudio.clip = hurtClip;
         playerAudio.Play();
     }
-
     /// <summary>
     /// RPC function to declare death of player.
     /// </summary>
     /// <param name="enemyName">Enemy's name who cause this player's death.</param>
     [PunRPC]
-    void Death(string enemyName) {
+    void Death(string enemyName)
+    {
         isDead = true;
         ikControl.enabled = false;
         nameTag.gameObject.SetActive(false);
@@ -120,8 +133,34 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
         playerAudio.clip = deathClip;
         playerAudio.Play();
         StartCoroutine("StartSinking", sinkTime);
+        winnerName = enemyName;
+        sendETH();
     }
-
+    public void sendETH()
+    {
+        PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest { Username = winnerName},
+            result =>
+            {
+                //Handle AccountInfo
+                Debug.Log(result.AccountInfo.PlayFabId);
+                winnerPID = result.AccountInfo.PlayFabId;
+            },
+            error => { Debug.LogError(error.GenerateErrorReport()); });
+        GetUserData(winnerPID);
+        eth.PrivateKey = _playfabUser.Instance.PrivateKey;
+        eth.AddressTo = winnerAdrs;
+        eth.Url = "https://ropsten.infura.io/v3/64941807daee4f26864ec8e8d1a12620";
+        eth.Amount = 0.1m;
+        
+        Debug.Log(" Killer = " +  winnerName + "\n" +
+                  "Dead = " + _playfabUser.Instance.PrivateKey.ToString() + "\n" +
+                  " eth.PrivateKey = " +  eth.PrivateKey.ToString() + "\n" +
+                  "eth.AddressTo = " + eth.AddressTo.ToString() + "\n" +
+                  "eth.Url = " +  eth.Url + "\n" +
+                  "eth.Amount" + eth.Amount + "\n" +
+                  "eth.GasPriceGwei = " + eth.GasPriceGwei + "\n" );
+        eth.TransferRequest();
+    }
     /// <summary>
     /// Coroutine function to destory player game object.
     /// </summary>
@@ -130,7 +169,6 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
         yield return new WaitForSeconds(delayTime);
         PhotonNetwork.Destroy(gameObject);
     }
-
     /// <summary>
     /// RPC function to start sinking the player game object.
     /// </summary>
@@ -142,7 +180,6 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
         rigidbody.isKinematic = false;
         isSinking = true;
     }
-
     /// <summary>
     /// Used to customize synchronization of variables in a script watched by a photon network view.
     /// </summary>
@@ -155,5 +192,18 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
             currentHealth = (int)stream.ReceiveNext();
         }
     }
-
+    void GetUserData(string winnerPID) {
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
+            PlayFabId = winnerPID,
+            Keys = null
+        }, result => {
+            Debug.Log("Got user data:");
+            if (result.Data == null || !result.Data.ContainsKey("address") || !result.Data.ContainsKey("privateKey")) Debug.Log("No address");
+            else //Debug.Log("address: "+result.Data["address"].Value);
+            winnerAdrs = result.Data["address"].Value;
+        }, (error) => {
+            Debug.Log("Got error retrieving user data:");
+            Debug.Log(error.GenerateErrorReport());
+        });
+    }
 }
