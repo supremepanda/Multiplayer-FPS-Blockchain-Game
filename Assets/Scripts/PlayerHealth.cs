@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
     public delegate void AddMessage(string Message);
     public event Respawn RespawnEvent;
     public event AddMessage AddMessageEvent;
-    public EtherTransferCoroutinesUnityWebRequest eth;
+   // public EtherTransferCoroutinesUnityWebRequest eth;
     [SerializeField]
     private int startingHealth = 100;
     [SerializeField]
@@ -48,6 +48,8 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
     private string winnerAdrs;
     private string winnerName;
     private PlayfabUser _playfabUser;
+
+    private EtherTransferCoroutinesUnityWebRequest eth;
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -64,8 +66,12 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
 
         Debug.Log(_playfabUser.Instance.Address + "\n" + _playfabUser.Instance.PrivateKey);
 
-        EtherTransferCoroutinesUnityWebRequest eth = GameObject.FindGameObjectWithTag("ETH")
-            .GetComponent<EtherTransferCoroutinesUnityWebRequest>();
+        /*EtherTransferCoroutinesUnityWebRequest eth = GameObject.FindGameObjectWithTag("ETH")
+            .GetComponent<EtherTransferCoroutinesUnityWebRequest>(); */
+
+        eth = FindObjectOfType<EtherTransferCoroutinesUnityWebRequest>();
+
+
         fpController = GetComponent<FirstPersonController>();
         ikControl = GetComponentInChildren<IKControl>();
         damageImage = GameObject.FindGameObjectWithTag("Screen").transform.Find("DamageImage").GetComponent<Image>();
@@ -147,11 +153,12 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
             },
             error => { Debug.LogError(error.GenerateErrorReport()); });
         GetUserData(winnerPID);
+
         eth.PrivateKey = _playfabUser.Instance.PrivateKey;
         eth.AddressTo = winnerAdrs;
         eth.Url = "https://ropsten.infura.io/v3/64941807daee4f26864ec8e8d1a12620";
         eth.Amount = 0.1m;
-        
+
         Debug.Log(" Killer = " +  winnerName + "\n" +
                   "Dead = " + _playfabUser.Instance.PrivateKey.ToString() + "\n" +
                   " eth.PrivateKey = " +  eth.PrivateKey.ToString() + "\n" +
