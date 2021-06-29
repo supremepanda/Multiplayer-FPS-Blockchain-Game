@@ -100,7 +100,10 @@ namespace SmartContract
         // Use this for initialization
         void Start () {
 
-            StartCoroutine(DeployAndTransferToken());
+            //StartCoroutine(DeployAndTransferToken());
+            StartCoroutine(Transaction("https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",
+                "622bdcf3915f11859a8657af0aa0dea840fbbf52c9fb9607adfa156f18f734e1",
+                "0x88144534Bd291b9c3D7BDB9A92D7270566f5622d", 100, "0x3ad4016c64a0b4601c873861597033f6e76efe7a", "0x6E603794Ac88E8a4Ebc978671384329aaD1ADd18"));
         }
 
 
@@ -116,7 +119,7 @@ namespace SmartContract
 
             var deployContract = new Eip20Deployment()
             {
-                InitialAmount = 10000,
+                InitialAmount = 100000,
                 FromAddress = account,
                 TokenName = "GameBank",
                 TokenSymbol = "GB"
@@ -152,15 +155,15 @@ namespace SmartContract
             var dtoResult = queryRequest.Result;
             Debug.Log(dtoResult.Balance);
 
-            var transactionTransferRequest = new TransactionSignedUnityRequest(url, privateKey);
-            var newAddress = "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe";
+            /*var transactionTransferRequest = new TransactionSignedUnityRequest(url, privateKey);
+            var newAddress = "0x88144534Bd291b9c3D7BDB9A92D7270566f5622d";
 
 
             var transactionMessage = new TransferFunction
             {
                 FromAddress = account,
                 To = newAddress,
-                Value = 1000,
+                Value = 100000,
             };
 
             yield return transactionTransferRequest.SignAndSendTransaction(transactionMessage, deploymentReceipt.ContractAddress);
@@ -180,8 +183,40 @@ namespace SmartContract
             yield return getLogsRequest.SendRequest(eventTransfer.CreateFilterInput(deploymentReceipt.ContractAddress, account));
 
             var eventDecoded = getLogsRequest.Result.DecodeAllEvents<TransferEventDto>();
-            Debug.Log("Transferd amount from get logs event: " + eventDecoded[0].Event.Value);
+            Debug.Log("Transferd amount from get logs event: " + eventDecoded[0].Event.Value);*/
 
+        }
+
+        public IEnumerator Transaction(string url, string privateKey, string account, int value, string contractAddress, string targetAdress)
+        {
+            var transactionTransferRequest = new TransactionSignedUnityRequest(url, privateKey);
+            var newAddress = targetAdress;
+
+
+            var transactionMessage = new TransferFunction
+            {
+                FromAddress = account,
+                To = newAddress,
+                Value = value,
+            };
+
+            yield return transactionTransferRequest.SignAndSendTransaction(transactionMessage, contractAddress);
+            var transactionTransferHash = transactionTransferRequest.Result;
+            Debug.Log(transactionTransferHash);
+
+            var transactionReceiptPolling = new TransactionReceiptPollingRequest(url);
+            yield return transactionReceiptPolling.PollForReceipt(transactionTransferHash, 2);
+            var transferReceipt = transactionReceiptPolling.Result;
+
+            var transferEvent = transferReceipt.DecodeAllEvents<TransferEventDto>();
+            Debug.Log("Transferd amount from event: " + transferEvent[0].Event.Value);
+
+            var getLogsRequest = new EthGetLogsUnityRequest(url);
+            var eventTransfer = TransferEventDto.GetEventABI();
+            yield return getLogsRequest.SendRequest(eventTransfer.CreateFilterInput(contractAddress, account));
+
+            var eventDecoded = getLogsRequest.Result.DecodeAllEvents<TransferEventDto>();
+            Debug.Log("Transferd amount from get logs event: " + eventDecoded[0].Event.Value);
         }
     }
 }
