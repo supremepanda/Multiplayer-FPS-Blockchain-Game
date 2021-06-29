@@ -159,18 +159,6 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
                 winnerPID = result.AccountInfo.PlayFabId;
                 GetUserData(winnerPID, adress =>
                 {
-                    eth.PrivateKey = _playfabUser.Instance.PrivateKey;
-                    eth.AddressTo = adress;
-                    eth.Url = "https://ropsten.infura.io/v3/64941807daee4f26864ec8e8d1a12620";
-                    eth.Amount = 0.1m;
-
-                    Debug.Log(" Killer = " +  winnerName + "\n" +
-                              "Dead = " + _playfabUser.Instance.PrivateKey.ToString() + "\n" +
-                              " eth.PrivateKey = " +  eth.PrivateKey.ToString() + "\n" +
-                              "eth.AddressTo = " + eth.AddressTo.ToString() + "\n" +
-                              "eth.Url = " +  eth.Url + "\n" +
-                              "eth.Amount" + eth.Amount + "\n" +
-                              "eth.GasPriceGwei = " + eth.GasPriceGwei + "\n" );
 
                    /* StartCoroutine(Transaction("https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",
                         "622bdcf3915f11859a8657af0aa0dea840fbbf52c9fb9607adfa156f18f734e1",
@@ -179,8 +167,7 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
                     StartCoroutine(
                         TokenDeployAndSend.Transaction(
                             "https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",_playfabUser.Instance.PrivateKey,
-                            _playfabUser.Instance.Address,1,"0x3ad4016c64a0b4601c873861597033f6e76efe7a",
-                            eth.AddressTo, false));
+                            _playfabUser.Instance.Address,1,"0x3ad4016c64a0b4601c873861597033f6e76efe7a",adress, false));
 
                     //eth.TransferRequest();
                 });
