@@ -1,3 +1,4 @@
+using System;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
@@ -161,6 +162,12 @@ namespace Login
         }
 
         #endregion
+
+        private void Awake()
+        {
+            PlayFabSettings.staticSettings.TitleId = "A107B";
+        }
+
         private void Start()
         {
             _playfabUser = FindObjectOfType<PlayfabUser>();

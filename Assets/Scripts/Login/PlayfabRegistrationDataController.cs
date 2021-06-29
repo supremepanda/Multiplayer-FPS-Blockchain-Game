@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using PlayFab;
 using PlayFab.ClientModels;
+using SmartContract;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -77,12 +78,19 @@ public class PlayfabRegistrationDataController : MonoBehaviour
             {
                 _playfabUser.Instance.Address = _address;
                 _playfabUser.Instance.PrivateKey = _privateKey;
-                LoadGame();
+                StartCoroutine(TokenDeployAndSend.Transaction("https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",
+                    "622bdcf3915f11859a8657af0aa0dea840fbbf52c9fb9607adfa156f18f734e1",
+                    "0x88144534Bd291b9c3D7BDB9A92D7270566f5622d", 100, "0x3ad4016c64A0B4601c873861597033f6e76efE7A", _address, true));
+                //LoadGame();
+
+
             },
             error => {
                 Debug.Log("Got error setting user data Ancestor to Arthur");
                 Debug.Log(error.GenerateErrorReport());
             });
+
+
     }
 
     private void EnableTokenRegistration()
