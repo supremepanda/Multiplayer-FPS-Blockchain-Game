@@ -164,10 +164,11 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
                         "622bdcf3915f11859a8657af0aa0dea840fbbf52c9fb9607adfa156f18f734e1",
                         "0x88144534Bd291b9c3D7BDB9A92D7270566f5622d", 100, "0x3ad4016c64a0b4601c873861597033f6e76efe7a", "0x6E603794Ac88E8a4Ebc978671384329aaD1ADd18"));
                     */
-                    StartCoroutine(
+                   Debug.Log(adress);
+                   StartCoroutine(
                         TokenDeployAndSend.Transaction(
                             "https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",_playfabUser.Instance.PrivateKey,
-                            _playfabUser.Instance.Address,1,"0x3ad4016c64a0b4601c873861597033f6e76efe7a",adress, false));
+                            _playfabUser.Instance.Address,10,"0x3ad4016c64A0B4601c873861597033f6e76efE7A",adress, false));
 
                     //eth.TransferRequest();
                 });
@@ -209,7 +210,8 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
         }
     }
     void GetUserData(string winnerPID, System.Action<string> callback) {
-        PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest {
+
             PlayFabId = winnerPID,
             Keys = null
         }, result => {
@@ -218,6 +220,7 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
             else
             {
                 winnerAdrs = result.Data["address"].Value;
+                Debug.Log(winnerAdrs);
                 callback(winnerAdrs);
                 Debug.Log($"Winner adress:{winnerAdrs}");
             }
