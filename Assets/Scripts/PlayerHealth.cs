@@ -165,10 +165,14 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
                         "0x88144534Bd291b9c3D7BDB9A92D7270566f5622d", 100, "0x3ad4016c64a0b4601c873861597033f6e76efe7a", "0x6E603794Ac88E8a4Ebc978671384329aaD1ADd18"));
                     */
                    Debug.Log(adress);
-                   StartCoroutine(
+                   /*StartCoroutine(
                         TokenDeployAndSend.Transaction(
                             "https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",_playfabUser.Instance.PrivateKey,
-                            _playfabUser.Instance.Address,10,"0x3ad4016c64A0B4601c873861597033f6e76efE7A",adress, false));
+                            _playfabUser.Instance.Address,10,"0x3ad4016c64A0B4601c873861597033f6e76efE7A",adress, false));*/
+                   
+                   StartCoroutine(TokenDeployAndSend.Transaction("https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",
+                       "622bdcf3915f11859a8657af0aa0dea840fbbf52c9fb9607adfa156f18f734e1",
+                       "0x88144534Bd291b9c3D7BDB9A92D7270566f5622d", 10, "0x3ad4016c64A0B4601c873861597033f6e76efE7A", adress, false));
 
                     //eth.TransferRequest();
                 });
@@ -216,13 +220,19 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
             Keys = null
         }, result => {
             Debug.Log("Got user data:");
+            Debug.Log(result.Data["address"].Value);
+            Debug.Log(result.Data["privateKey"].Value);
+
+            Debug.Log(result.Data.ContainsKey("address"));
+            Debug.Log(result.Data.ContainsKey("privateKey"));
             if (result.Data == null || !result.Data.ContainsKey("address") || !result.Data.ContainsKey("privateKey")) Debug.Log("No address");
             else
             {
+                Debug.Log("Icerde");
                 winnerAdrs = result.Data["address"].Value;
-                Debug.Log(winnerAdrs);
-                callback(winnerAdrs);
                 Debug.Log($"Winner adress:{winnerAdrs}");
+                callback(winnerAdrs);
+                
             }
 
         }, (error) => {

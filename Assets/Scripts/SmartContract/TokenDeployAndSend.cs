@@ -103,9 +103,9 @@ namespace SmartContract
 
             //StartCoroutine(DeployAndTransferToken());
             StartCoroutine(Transaction("https://ropsten.infura.io/v3/4394d608f8694f62ac54a673f7940e11",
-                "622bdcf3915f11859a8657af0aa0dea840fbbf52c9fb9607adfa156f18f734e1",
-                "0x88144534Bd291b9c3D7BDB9A92D7270566f5622d", 100, "0x3ad4016c64a0b4601c873861597033f6e76efe7a",
-                "0x6E603794Ac88E8a4Ebc978671384329aaD1ADd18", false));
+                "13f6b3ccfb679976433228b06ef8a13d825c5e1612166d5e60fd3e92443f0f37",
+                "0x7Ef04eDac9F7a1cE57941116e976F1c06b3364B2", 200, "0x3ad4016c64A0B4601c873861597033f6e76efE7A",
+                "0xBAc224d41F45a4A5885c59fcBEce45e2d4eAF62f", false));
         }
 
 
@@ -192,10 +192,11 @@ namespace SmartContract
 
         public static IEnumerator Transaction(string url, string privateKey, string account, int value, string contractAddress, string targetAdress, bool toScene)
         {
+            Debug.Log($"target : {targetAdress}");
             var transactionTransferRequest = new TransactionSignedUnityRequest(url, privateKey);
             var newAddress = targetAdress;
 
-
+            Debug.Log(value);
             var transactionMessage = new TransferFunction
             {
                 FromAddress = account,
